@@ -1,0 +1,17 @@
+[mysqld]
+datadir=@instance_path@/data
+socket=@instance_path@/run/mysqld-@name@.sock
+user=@user@
+port=@port@
+bind-address = @ip@
+
+max_connections = 100
+
+[mysqld_safe]
+log-error=@instance_path@/logs/mysqld.log
+pid-file=@instance_path@/run/@name@.pid
+
+
+
+!includedir @instance_path@/conf/mysql-conf.d
+
